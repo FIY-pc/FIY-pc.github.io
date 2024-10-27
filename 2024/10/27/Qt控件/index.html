@@ -1,0 +1,1030 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="FIY-pc">
+  <meta name="keywords" content="博客">
+  
+    <meta name="description" content="Layout1. 垂直布局（Vertical Layout） 功能：垂直布局将控件按垂直方向排列，每个控件占据一行。当窗口大小改变时，控件会保持垂直排列，并根据需要调整大小。 应用场景：适用于需要将多个控件垂直堆叠的场景，如设置对话框中的选项按钮。  2. 水平布局（Horizontal Layout） 功能：水平布局将控件按水平方向排列，每个控件占据一列。当窗口大小改变时，控件会保持水平排列，并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FIY-pc Blog">
+<meta property="og:url" content="https://fiy-pc.github.io/2024/10/27/Qt%E6%8E%A7%E4%BB%B6/index.html">
+<meta property="og:site_name" content="FIY-pc Blog">
+<meta property="og:description" content="Layout1. 垂直布局（Vertical Layout） 功能：垂直布局将控件按垂直方向排列，每个控件占据一行。当窗口大小改变时，控件会保持垂直排列，并根据需要调整大小。 应用场景：适用于需要将多个控件垂直堆叠的场景，如设置对话框中的选项按钮。  2. 水平布局（Horizontal Layout） 功能：水平布局将控件按水平方向排列，每个控件占据一列。当窗口大小改变时，控件会保持水平排列，并">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-27T02:49:14.418Z">
+<meta property="article:modified_time" content="2024-08-30T20:57:18.000Z">
+<meta property="article:author" content="FIY-pc">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>FIY-pc Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"fiy-pc.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-27 10:49" pubdate>
+          2024年10月27日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          56 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h2><h3 id="1-垂直布局（Vertical-Layout）"><a href="#1-垂直布局（Vertical-Layout）" class="headerlink" title="1. 垂直布局（Vertical Layout）"></a>1. 垂直布局（Vertical Layout）</h3><ul>
+<li><strong>功能</strong>：垂直布局将控件按垂直方向排列，每个控件占据一行。当窗口大小改变时，控件会保持垂直排列，并根据需要调整大小。</li>
+<li><strong>应用场景</strong>：适用于需要将多个控件垂直堆叠的场景，如设置对话框中的选项按钮。</li>
+</ul>
+<h3 id="2-水平布局（Horizontal-Layout）"><a href="#2-水平布局（Horizontal-Layout）" class="headerlink" title="2. 水平布局（Horizontal Layout）"></a>2. 水平布局（Horizontal Layout）</h3><ul>
+<li><strong>功能</strong>：水平布局将控件按水平方向排列，每个控件占据一列。当窗口大小改变时，控件会保持水平排列，并根据需要调整大小。</li>
+<li><strong>应用场景</strong>：适用于需要将多个控件水平排列的场景，如工具栏中的按钮。</li>
+</ul>
+<h3 id="3-网格布局（Grid-Layout）"><a href="#3-网格布局（Grid-Layout）" class="headerlink" title="3. 网格布局（Grid Layout）"></a>3. 网格布局（Grid Layout）</h3><ul>
+<li><strong>功能</strong>：网格布局将控件放置在一个网格中，每个控件占据一个或多个单元格。当窗口大小改变时，所有单元格的大小会等比例调整，以保持控件之间的相对位置和大小关系。</li>
+<li><strong>应用场景</strong>：适用于需要复杂布局的场景，如表单输入界面，其中控件需要按照特定的行列关系排列。</li>
+</ul>
+<h3 id="4-表单布局（Form-Layout）"><a href="#4-表单布局（Form-Layout）" class="headerlink" title="4. 表单布局（Form Layout）"></a>4. 表单布局（Form Layout）</h3><ul>
+<li><strong>功能</strong>：表单布局类似于网格布局，但它通常用于创建表单界面。在表单布局中，标签（Label）和相应的输入控件（如LineEdit、SpinBox等）会成对出现，标签通常位于输入控件的左侧或上方。</li>
+<li><strong>应用场景</strong>：适用于需要创建数据输入表单的场景，如用户注册界面。</li>
+</ul>
+<h3 id="布局控件的共同特点和使用注意事项："><a href="#布局控件的共同特点和使用注意事项：" class="headerlink" title="布局控件的共同特点和使用注意事项："></a>布局控件的共同特点和使用注意事项：</h3><ul>
+<li><strong>自动管理控件大小</strong>：布局控件会根据窗口大小自动调整内部控件的大小和位置，无需手动设置。</li>
+<li><strong>嵌套使用</strong>：布局控件可以嵌套使用，以创建更复杂的布局结构。例如，可以在水平布局中嵌套垂直布局，或在网格布局中嵌套其他布局控件。</li>
+<li><strong>边距和间距</strong>：在布局控件中，可以设置边距（Margin）和间距（Spacing）来调整控件与布局边界以及控件之间的空间距离。</li>
+<li><strong>伸缩性</strong>：某些布局控件（如网格布局和表单布局）支持伸缩性设置，允许用户指定在窗口大小改变时哪些控件应该优先调整大小。</li>
+</ul>
+<h3 id="使用布局控件的建议："><a href="#使用布局控件的建议：" class="headerlink" title="使用布局控件的建议："></a>使用布局控件的建议：</h3><ul>
+<li><strong>尽早使用布局</strong>：在设计GUI界面时，应尽早使用布局控件来规划控件的排列方式，以避免在后期调整界面布局时出现混乱。</li>
+<li><strong>合理利用嵌套布局</strong>：通过嵌套使用不同的布局控件，可以创建出既美观又实用的GUI界面。但需要注意的是，过度嵌套可能会导致布局变得复杂且难以维护。</li>
+<li><strong>注意控件的默认大小和策略</strong>：某些控件具有默认的大小和伸缩策略，这些设置可能会影响布局控件的效果。因此，在设计界面时需要注意控件的这些属性并根据需要进行调整。</li>
+</ul>
+<h2 id="Spacer"><a href="#Spacer" class="headerlink" title="Spacer"></a>Spacer</h2><h3 id="一、Spacer控件的类型"><a href="#一、Spacer控件的类型" class="headerlink" title="一、Spacer控件的类型"></a>一、Spacer控件的类型</h3><p>Qt Designer提供了两种主要类型的Spacer控件，虽然在实际使用中可能通过不同的方式实现（如QSpacerItem和QSpacerWidget），但在Qt Designer的界面中，用户主要关注的是它们的功能和效果：</p>
+<ol>
+<li><p><strong>横向Spacer</strong>：</p>
+<ul>
+<li>功能：用于在水平方向上占据空间，调整控件之间的水平间距。</li>
+<li>应用场景：当需要在水平布局中增加控件之间的水平间距时，可以使用横向Spacer。</li>
+</ul>
+</li>
+<li><p><strong>纵向Spacer</strong>：</p>
+<ul>
+<li>功能：用于在垂直方向上占据空间，调整控件之间的垂直间距。</li>
+<li>应用场景：当需要在垂直布局中增加控件之间的垂直间距时，可以使用纵向Spacer。</li>
+</ul>
+</li>
+</ol>
+<p>需要注意的是，虽然Qt Designer的界面可能不直接区分“横向Spacer”和“纵向Spacer”作为独立的控件类型，但用户可以通过在水平布局中添加Spacer来实现横向间距的调整，在垂直布局中添加Spacer来实现纵向间距的调整。</p>
+<h3 id="二、Spacer控件的属性"><a href="#二、Spacer控件的属性" class="headerlink" title="二、Spacer控件的属性"></a>二、Spacer控件的属性</h3><p>Spacer控件在Qt Designer中可能不直接暴露所有底层属性（如QSpacerItem的sizeHint和stretch属性），但用户可以通过布局管理器间接控制Spacer的行为。然而，了解Spacer控件背后的一些常见属性对于深入理解其工作原理是有帮助的：</p>
+<ul>
+<li><strong>sizeHint</strong>：Spacer控件建议的大小。这通常是一个最小值，布局管理器可能会根据需要进行调整。</li>
+<li><strong>stretch</strong>：Spacer控件的伸缩因子。它决定了在布局调整大小时，Spacer控件相对于其他控件应该占据多少额外空间。stretch值较大的Spacer控件会占据更多的额外空间。</li>
+</ul>
+<p>在Qt Designer中，用户可能无法直接设置这些属性，但可以通过调整布局和Spacer控件的位置和大小来间接影响它们。</p>
+<h3 id="三、Spacer控件的使用"><a href="#三、Spacer控件的使用" class="headerlink" title="三、Spacer控件的使用"></a>三、Spacer控件的使用</h3><p>在Qt Designer中使用Spacer控件非常直观：</p>
+<ol>
+<li><p><strong>添加Spacer</strong>：</p>
+<ul>
+<li>打开Qt Designer并加载或创建一个UI文件。</li>
+<li>在工具箱中找到Spacer控件（有时可能需要先选择一个布局容器，因为Spacer控件不是独立的控件，而是布局的一部分）。</li>
+<li>将Spacer控件拖拽到布局中的适当位置。</li>
+</ul>
+</li>
+<li><p><strong>调整Spacer</strong>：</p>
+<ul>
+<li>选中Spacer控件后，您可能会看到它的边缘出现调整手柄（这取决于Qt Designer的版本和设置）。</li>
+<li>通过拖动调整手柄，您可以改变Spacer控件的大小。然而，请注意，对于Spacer控件来说，“大小”实际上是一个相对概念，它更多地影响的是布局中其他控件之间的间距。</li>
+</ul>
+</li>
+<li><p><strong>观察效果</strong>：</p>
+<ul>
+<li>在调整Spacer控件后，观察布局中其他控件的位置和间距是否如您所期望的那样发生了变化。</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、注意事项"><a href="#四、注意事项" class="headerlink" title="四、注意事项"></a>四、注意事项</h3><ul>
+<li><strong>Spacer控件的实际效果取决于布局管理器和其他控件的属性</strong>。因此，在调整Spacer控件时，请务必考虑整个布局的情况。</li>
+<li><strong>避免过度使用Spacer控件</strong>。虽然Spacer控件是调整布局间距的有用工具，但过度使用可能会使布局变得复杂且难以维护。在可能的情况下，尝试使用布局管理器的默认间距和边距属性来简化布局设计。</li>
+</ul>
+<h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><p>在Qt Designer中，Button控件是一组用于与用户交互的按钮类控件，它们提供了不同的功能和外观选项。以下是对所有常见Button控件的详细讲解：</p>
+<h3 id="1-Push-Button（常规按钮）"><a href="#1-Push-Button（常规按钮）" class="headerlink" title="1. Push Button（常规按钮）"></a>1. Push Button（常规按钮）</h3><ul>
+<li><strong>功能</strong>：Push Button是最常见的按钮类型，用于响应用户的点击操作。点击后会触发clicked信号。</li>
+<li><strong>外观定制</strong>：可以通过设置按钮的文本、图标等属性来定制其外观。同时，支持通过样式表进一步定制按钮的样式。</li>
+<li><strong>使用场景</strong>：适用于大多数需要用户点击以执行操作的场景，如提交表单、打开新窗口等。</li>
+</ul>
+<h3 id="2-Tool-Button（工具按钮）"><a href="#2-Tool-Button（工具按钮）" class="headerlink" title="2. Tool Button（工具按钮）"></a>2. Tool Button（工具按钮）</h3><ul>
+<li><strong>功能</strong>：通常用于创建工具栏按钮，可以显示图标、文本或者同时显示两者。工具按钮还可以包含一个菜单项，当用户点击时弹出菜单。</li>
+<li><strong>外观定制</strong>：除了文本和图标外，还可以设置按钮的弹出模式（即时弹出、延迟弹出等）和样式。</li>
+<li><strong>使用场景</strong>：适用于工具栏中的快速访问按钮，如保存、打开、撤销等操作。</li>
+</ul>
+<h3 id="3-Radio-Button（单选按钮）"><a href="#3-Radio-Button（单选按钮）" class="headerlink" title="3. Radio Button（单选按钮）"></a>3. Radio Button（单选按钮）</h3><ul>
+<li><strong>功能</strong>：用于在一组选项中选择一个选项。当选择某个单选按钮时，其他单选按钮将被自动取消选择。</li>
+<li><strong>使用注意事项</strong>：单选按钮通常需要放在RadioGroup内以实现单选功能。</li>
+<li><strong>使用场景</strong>：适用于需要从一组互斥选项中选择一个的场景，如性别选择、语言选择等。</li>
+</ul>
+<h3 id="4-Check-Box（复选框）"><a href="#4-Check-Box（复选框）" class="headerlink" title="4. Check Box（复选框）"></a>4. Check Box（复选框）</h3><ul>
+<li><strong>功能</strong>：用于可选的选项，可以选择多个。与单选按钮不同，复选框允许用户同时选择多个选项。</li>
+<li><strong>使用场景</strong>：适用于需要从多个可选项中选择一个或多个的场景，如同意隐私政策、订阅新闻等。</li>
+<li><strong>特有属性</strong>：复选框还可以设置为三态（未选中、选中、半选中），但这需要特别配置。</li>
+</ul>
+<h3 id="5-Command-Link-Button（命令链接按钮）"><a href="#5-Command-Link-Button（命令链接按钮）" class="headerlink" title="5. Command Link Button（命令链接按钮）"></a>5. Command Link Button（命令链接按钮）</h3><ul>
+<li><strong>功能</strong>：这是一种类似于QPushButton的按钮类型，但具有更多的样式和功能。它可以显示文本、图标以及访问键信息，并支持拖拽操作。</li>
+<li><strong>外观定制</strong>：提供了更多的样式选项，如高亮、悬停等状态样式。</li>
+<li><strong>使用场景</strong>：常用于向导和对话框中，提供类似链接的按钮样式，以增加用户的交互体验。</li>
+</ul>
+<h3 id="6-Dialog-Button-Box（对话框按钮盒）"><a href="#6-Dialog-Button-Box（对话框按钮盒）" class="headerlink" title="6. Dialog Button Box（对话框按钮盒）"></a>6. Dialog Button Box（对话框按钮盒）</h3><ul>
+<li><strong>功能</strong>：这是一种特殊的按钮容器，用于放置对话框中的标准按钮，如“OK”、“Cancel”、“Yes”、“No”等。它提供了统一的外观和行为标准，方便用户理解和使用。</li>
+<li><strong>使用方式</strong>：可以自定义按钮布局和样式，也可以直接使用系统默认按钮。</li>
+<li><strong>使用场景</strong>：适用于所有需要标准对话框按钮布局的场景，如确认对话框、设置对话框等。</li>
+</ul>
+<h3 id="共性属性"><a href="#共性属性" class="headerlink" title="共性属性"></a>共性属性</h3><p>除了上述特定于每种Button控件的属性外，它们还共享一些共性属性，这些属性通常通过QAbstractButton类提供：</p>
+<ul>
+<li><strong>text</strong>：按钮上显示的文本。</li>
+<li><strong>icon</strong>：按钮上显示的图标。</li>
+<li><strong>iconSize</strong>：图标的大小。</li>
+<li><strong>shortcut</strong>：与按钮关联的快捷键。</li>
+<li><strong>checkable</strong>：按钮是否可以被选中（对于非单选&#x2F;复选框按钮）。</li>
+<li><strong>checked</strong>：按钮是否被选中的状态。</li>
+<li><strong>autoRepeat</strong>、<strong>autoRepeatDelay</strong>、<strong>autoRepeatInterval</strong>：控制按钮按下事件是否重复、重复的频次等。</li>
+<li><strong>autoExclusive</strong>：是否启用按钮的自动排他特性（对于非单选按钮）。</li>
+</ul>
+<p>这些共性属性使得开发者能够灵活地定制Button控件的行为和外观，以满足不同应用程序的需求。同时，Qt Designer提供的拖放式设计方式大大简化了界面开发的过程，提高了开发效率。</p>
+<h2 id="item-view"><a href="#item-view" class="headerlink" title="item view"></a>item view</h2><p>在Qt Designer中，Item View控件是基于模型&#x2F;视图（Model&#x2F;View）架构的一组控件，用于展示和操作数据。这些控件通过分离数据的存储（模型）和数据的展示（视图），提供了灵活且高效的数据展示方式。以下是几种常见的Item View控件的详细讲解：</p>
+<h3 id="1-List-View（列表视图）"><a href="#1-List-View（列表视图）" class="headerlink" title="1. List View（列表视图）"></a>1. List View（列表视图）</h3><ul>
+<li><strong>功能</strong>：用于展示列表形式的数据。可以定制列表项的显示方式，如文本、图标等，并支持单选或多选。</li>
+<li><strong>数据模型</strong>：List View本身不存储数据，而是通过一个数据模型（如QStringListModel、QStandardItemModel等）来获取数据。</li>
+<li><strong>特点</strong>：提供垂直滚动条，支持拖拽操作，可以设置选择模式、编辑触发器等。</li>
+<li><strong>使用场景</strong>：适用于需要展示一系列可选项的场景，如文件列表、搜索结果等。</li>
+</ul>
+<h3 id="2-Tree-View（树形视图）"><a href="#2-Tree-View（树形视图）" class="headerlink" title="2. Tree View（树形视图）"></a>2. Tree View（树形视图）</h3><ul>
+<li><strong>功能</strong>：用于展示树形结构的数据，如文件系统、组织结构图等。支持节点的展开和折叠，以及节点的拖拽操作。</li>
+<li><strong>数据模型</strong>：与List View类似，Tree View也通过数据模型来获取数据，常用的数据模型包括QAbstractItemModel、QStandardItemModel等。</li>
+<li><strong>特点</strong>：提供垂直滚动条，可以定制节点的显示方式，支持多列展示（通过QTreeView配合委托实现）。</li>
+<li><strong>使用场景</strong>：适用于需要展示层次结构数据的场景。</li>
+</ul>
+<h3 id="3-Table-View（表格视图）"><a href="#3-Table-View（表格视图）" class="headerlink" title="3. Table View（表格视图）"></a>3. Table View（表格视图）</h3><ul>
+<li><strong>功能</strong>：用于展示二维表格数据，如电子表格、数据库表格等。支持行和列的插入、删除、移动，以及数据的排序和过滤。</li>
+<li><strong>数据模型</strong>：Table View同样需要一个数据模型来提供数据，常用的数据模型包括QAbstractTableModel、QStandardItemModel等。</li>
+<li><strong>特点</strong>：提供水平和垂直滚动条，可以调整列宽和行高，支持多选、排序、过滤等功能。</li>
+<li><strong>使用场景</strong>：适用于需要展示和编辑二维数据的场景。</li>
+</ul>
+<h3 id="4-Column-View（列视图）"><a href="#4-Column-View（列视图）" class="headerlink" title="4. Column View（列视图）"></a>4. Column View（列视图）</h3><ul>
+<li><strong>功能</strong>：Column View是一种特殊的列表视图，它以列为单位展示数据，每列可以看作是一个独立的列表视图。</li>
+<li><strong>特点</strong>：这种展示方式对于展示具有层次结构但层级不多的数据特别有用，因为它允许用户通过横向滚动来查看不同层级的数据。</li>
+<li><strong>使用场景</strong>：适用于需要展示有限层级的树形结构数据的场景。</li>
+</ul>
+<h3 id="5-Undo-View（撤销命令视图）"><a href="#5-Undo-View（撤销命令视图）" class="headerlink" title="5. Undo View（撤销命令视图）"></a>5. Undo View（撤销命令视图）</h3><ul>
+<li><strong>功能</strong>：Undo View提供了一个用户界面来展示和操作QUndoStack中的命令。用户可以从列表中选择并撤销或重做特定的命令。</li>
+<li><strong>特点</strong>：通常显示为一个列表，与List View类似，但专门用于撤销&#x2F;重做操作的管理。</li>
+<li><strong>使用场景</strong>：在需要支持撤销&#x2F;重做功能的应用程序中非常有用，如文本编辑器、图形编辑器等。</li>
+</ul>
+<h3 id="共性特点"><a href="#共性特点" class="headerlink" title="共性特点"></a>共性特点</h3><ul>
+<li><strong>模型&#x2F;视图分离</strong>：所有Item View控件都遵循模型&#x2F;视图架构，使得数据的存储和展示可以独立进行，提高了数据管理的灵活性和效率。</li>
+<li><strong>丰富的接口和属性</strong>：这些控件提供了丰富的接口和属性，允许开发者定制外观、行为和数据交互方式。</li>
+<li><strong>易于集成</strong>：在Qt Designer中，开发者可以通过拖拽的方式将这些视图控件添加到界面中，并通过属性编辑器设置相关属性，使得界面开发更加直观和高效。</li>
+</ul>
+<p>总的来说，Qt Designer中的Item View控件为开发者提供了强大的数据展示和操作功能，通过灵活使用这些控件，可以构建出丰富多样的用户界面。</p>
+<h2 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h2><p>在Qt Designer中，Container控件（容器控件）主要用于对界面上的其他控件进行分组、布局和管理，以提高界面的组织性和美观性。以下是对几种常见Container控件的详细讲解：</p>
+<h3 id="1-Group-Box（分组框）"><a href="#1-Group-Box（分组框）" class="headerlink" title="1. Group Box（分组框）"></a>1. Group Box（分组框）</h3><ul>
+<li><strong>功能</strong>：将一组相关的控件组织在一起，并在外部提供一个边框和标题栏，用于标识这组控件的用途或类别。</li>
+<li><strong>特点</strong>：分组框内部通常需要使用布局管理器（如QHBoxLayout、QVBoxLayout等）来安排控件的位置和大小。分组框本身也可以响应点击事件，但主要作用是作为控件的容器。</li>
+<li><strong>使用场景</strong>：适用于需要将一组控件作为一个整体进行展示和操作的场景，如设置选项、表单输入等。</li>
+</ul>
+<h3 id="2-Scroll-Area（滚动区域）"><a href="#2-Scroll-Area（滚动区域）" class="headerlink" title="2. Scroll Area（滚动区域）"></a>2. Scroll Area（滚动区域）</h3><ul>
+<li><strong>功能</strong>：提供一个可滚动的视图区域，用于在有限的显示空间内展示大量内容或控件。</li>
+<li><strong>特点</strong>：当滚动区域的内容超出其可视范围时，会自动显示滚动条，允许用户通过滚动来查看完整内容。滚动区域可以包含任何类型的控件或布局。</li>
+<li><strong>使用场景</strong>：适用于需要展示大量数据或控件，但显示空间有限的场景，如长文本编辑器、图片查看器等。</li>
+</ul>
+<h3 id="3-Tab-Widget（标签页部件）"><a href="#3-Tab-Widget（标签页部件）" class="headerlink" title="3. Tab Widget（标签页部件）"></a>3. Tab Widget（标签页部件）</h3><ul>
+<li><strong>功能</strong>：允许在同一个区域内通过标签页的形式切换不同的界面或内容。</li>
+<li><strong>特点</strong>：每个标签页都对应一个独立的界面或内容区域，用户可以通过点击标签页来切换显示的内容。标签页部件提供了丰富的接口来管理标签页，如添加、删除、重命名等。</li>
+<li><strong>使用场景</strong>：适用于需要将多个相关但独立的界面组织在一起，并通过标签页进行切换的场景，如浏览器的多个标签页、软件的多功能界面等。</li>
+</ul>
+<h3 id="4-Stacked-Widget（堆叠控件）"><a href="#4-Stacked-Widget（堆叠控件）" class="headerlink" title="4. Stacked Widget（堆叠控件）"></a>4. Stacked Widget（堆叠控件）</h3><ul>
+<li><strong>功能</strong>：以堆叠的方式组织多个控件或界面，但一次只显示一个控件或界面。</li>
+<li><strong>特点</strong>：通过编程方式或与其他控件（如列表框）配合，可以实现控件或界面之间的切换。堆叠控件不提供直接的切换界面，需要通过代码或信号与槽机制来实现。</li>
+<li><strong>使用场景</strong>：适用于需要根据用户操作或条件动态切换显示不同控件或界面的场景，如向导式界面、设置选项卡等。</li>
+</ul>
+<h3 id="5-Tool-Box（工具箱）"><a href="#5-Tool-Box（工具箱）" class="headerlink" title="5. Tool Box（工具箱）"></a>5. Tool Box（工具箱）</h3><ul>
+<li><strong>功能</strong>：提供一个多页面的工具箱，每个页面可以包含多个控件或布局。</li>
+<li><strong>特点</strong>：类似于标签页部件，但工具箱的页面通常通过按钮或标题栏来切换，且页面之间的切换更加紧凑和直观。工具箱也支持拖拽操作，允许用户重新排列页面顺序。</li>
+<li><strong>使用场景</strong>：适用于需要将多个相关页面组织在一起，并通过按钮或标题栏进行切换的场景，如软件的工具箱、设置选项分组等。</li>
+</ul>
+<h3 id="6-Frame（框架）"><a href="#6-Frame（框架）" class="headerlink" title="6. Frame（框架）"></a>6. Frame（框架）</h3><ul>
+<li><strong>功能</strong>：作为其他控件的容器，用于对控件进行分组或装饰。</li>
+<li><strong>特点</strong>：框架本身不提供滚动条或标签页等功能，但可以通过设置边框样式、阴影等属性来美化界面。框架内部同样需要使用布局管理器来安排控件的位置和大小。</li>
+<li><strong>使用场景</strong>：适用于需要对一组控件进行简单分组或装饰的场景，如表单中的字段分组、界面中的装饰性边框等。</li>
+</ul>
+<h3 id="共性特点-1"><a href="#共性特点-1" class="headerlink" title="共性特点"></a>共性特点</h3><ul>
+<li><strong>容器作用</strong>：所有Container控件都作为其他控件的容器，用于组织和管理界面元素。</li>
+<li><strong>布局管理</strong>：内部通常需要使用布局管理器来安排控件的位置和大小，以确保界面的整洁和一致性。</li>
+<li><strong>灵活定制</strong>：大多数Container控件都提供了丰富的属性和接口，允许开发者根据需要进行定制和扩展。</li>
+</ul>
+<p>通过合理使用这些Container控件，开发者可以构建出结构清晰、美观易用的用户界面。</p>
+<h2 id="Input-Widget"><a href="#Input-Widget" class="headerlink" title="Input Widget"></a>Input Widget</h2><p>在Qt Designer中，Input Widgets（输入控件）是一组用于接收用户输入的界面元素。这些控件允许用户通过键盘、鼠标或其他输入设备输入文本、数字、日期时间等信息。以下是对Qt中常见Input Widgets控件的详细讲解：</p>
+<h3 id="1-QLineEdit（单行文本编辑框）"><a href="#1-QLineEdit（单行文本编辑框）" class="headerlink" title="1. QLineEdit（单行文本编辑框）"></a>1. QLineEdit（单行文本编辑框）</h3><ul>
+<li><strong>功能</strong>：用于单行文本输入，如用户名、密码等。</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>setText(const QString &amp;text)</code>：设置文本框内容。</li>
+<li><code>text() const</code>：返回文本框内容。</li>
+<li><code>clear()</code>：清除文本框内容。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>textChanged(const QString &amp;text)</code>：当文本框内容发生变化时发射。</li>
+<li><code>editingFinished()</code>：当编辑完成（如按下回车键）时发射。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要单行文本输入的场景。</li>
+</ul>
+<h3 id="2-QTextEdit（多行文本编辑框）"><a href="#2-QTextEdit（多行文本编辑框）" class="headerlink" title="2. QTextEdit（多行文本编辑框）"></a>2. QTextEdit（多行文本编辑框）</h3><ul>
+<li><strong>功能</strong>：用于多行文本输入，支持富文本格式（HTML）。</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>toPlainText()</code>：返回文本框内的纯文本内容。</li>
+<li><code>setPlainText(const QString &amp;text)</code>：设置文本框内的纯文本内容。</li>
+<li><code>toHtml()</code>：返回文本框内的HTML内容。</li>
+<li><code>setHtml(const QString &amp;text)</code>：设置文本框内的HTML内容。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>textChanged()</code>：当文本内容发生变化时发射。</li>
+<li><code>cursorPositionChanged()</code>：当光标位置发生变化时发射。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要输入或显示多行文本的场景，如邮件正文、聊天窗口等。</li>
+</ul>
+<h3 id="3-QPlainTextEdit（纯文本多行编辑框）"><a href="#3-QPlainTextEdit（纯文本多行编辑框）" class="headerlink" title="3. QPlainTextEdit（纯文本多行编辑框）"></a>3. QPlainTextEdit（纯文本多行编辑框）</h3><ul>
+<li><strong>功能</strong>：与QTextEdit类似，但专门用于纯文本编辑，不支持富文本格式。</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>toPlainText()</code>：返回文本框内的纯文本内容。</li>
+<li><code>appendPlainText(const QString &amp;text)</code>：在文本末尾追加纯文本内容。</li>
+<li><code>insertPlainText(const QString &amp;text)</code>：在光标位置插入纯文本内容。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>textChanged()</code>：当文本内容发生变化时发射。</li>
+<li><code>cursorPositionChanged()</code>：当光标位置发生变化时发射。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要编辑纯文本的场景，如代码编辑器、文本文件编辑器等。</li>
+</ul>
+<h3 id="4-QSpinBox（整数调节按钮）"><a href="#4-QSpinBox（整数调节按钮）" class="headerlink" title="4. QSpinBox（整数调节按钮）"></a>4. QSpinBox（整数调节按钮）</h3><ul>
+<li><strong>功能</strong>：允许用户通过点击上下箭头或输入数字来选择一个整数值。</li>
+<li><strong>常用属性</strong>：<ul>
+<li><code>minimum</code>：最小值。</li>
+<li><code>maximum</code>：最大值。</li>
+<li><code>singleStep</code>：每次点击箭头改变的值。</li>
+<li><code>value</code>：当前值。</li>
+</ul>
+</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>setValue(int val)</code>：设置当前值。</li>
+<li><code>value()</code>：获取当前值。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>valueChanged(int i)</code>：当值发生变化时发射。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要用户输入整数值的场景，如年龄、数量等。</li>
+</ul>
+<h3 id="5-QDoubleSpinBox（浮点数调节按钮）"><a href="#5-QDoubleSpinBox（浮点数调节按钮）" class="headerlink" title="5. QDoubleSpinBox（浮点数调节按钮）"></a>5. QDoubleSpinBox（浮点数调节按钮）</h3><ul>
+<li><strong>功能</strong>：与QSpinBox类似，但允许用户输入浮点数。</li>
+<li><strong>特有属性</strong>：<ul>
+<li><code>decimals</code>：小数点后的位数。</li>
+</ul>
+</li>
+<li><strong>其他属性与方法</strong>：与QSpinBox相似。</li>
+<li><strong>使用场景</strong>：适用于需要用户输入浮点数值的场景，如价格、百分比等。</li>
+</ul>
+<h3 id="6-QComboBox（下拉列表框）"><a href="#6-QComboBox（下拉列表框）" class="headerlink" title="6. QComboBox（下拉列表框）"></a>6. QComboBox（下拉列表框）</h3><ul>
+<li><strong>功能</strong>：提供一个下拉列表供用户选择，节省屏幕空间。</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>addItem(const QString &amp;text, const QVariant &amp;userData = QVariant())</code>：添加单个选项。</li>
+<li><code>addItems(const QStringList &amp;texts)</code>：添加多个选项。</li>
+<li><code>currentIndex()</code>：获取当前选中项的索引。</li>
+<li><code>currentText()</code>：获取当前选中项的文本。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>currentIndexChanged(int index)</code>：当选中项发生变化时发射，参数为新的索引值。</li>
+<li><code>currentIndexChanged(const QString &amp;text)</code>：当选中项发生变化时发射，参数为新的文本值。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要从预定义选项中选择一个的场景，如性别、国家等。</li>
+</ul>
+<h3 id="7-QFontComboBox（字体组合框）"><a href="#7-QFontComboBox（字体组合框）" class="headerlink" title="7. QFontComboBox（字体组合框）"></a>7. QFontComboBox（字体组合框）</h3><ul>
+<li><strong>功能</strong>：允许用户从下拉列表中选择字体。</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>currentFont()</code>：获取当前选中的字体。</li>
+<li><code>setFontFilters(const QFontFilters &amp;filters)</code>：设置字体过滤器，以限制可选的字体。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>currentFontChanged(const QFont &amp;f)</code>：当选中字体发生变化时发射。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要用户选择字体的场景，如文本编辑器、图形设计工具等。</li>
+</ul>
+<h3 id="8-QDateTimeEdit、QDateEdit、QTimeEdit（日期时间、日期、时间编辑框）"><a href="#8-QDateTimeEdit、QDateEdit、QTimeEdit（日期时间、日期、时间编辑框）" class="headerlink" title="8. QDateTimeEdit、QDateEdit、QTimeEdit（日期时间、日期、时间编辑框）"></a>8. QDateTimeEdit、QDateEdit、QTimeEdit（日期时间、日期、时间编辑框）</h3><ul>
+<li><strong>功能</strong>：分别用于编辑日期时间、日期和时间。</li>
+<li><strong>常用方法</strong>：<ul>
+<li><code>setDate(const QDate &amp;date)</code>：设置日期。</li>
+<li><code>setTime(const QTime &amp;time)</code>：设置时间。</li>
+<li><code>setDateTime(const QDateTime &amp;dateTime)</code>：设置日期和时间。</li>
+<li><code>date()</code>、<code>time()</code>、<code>dateTime()</code>：分别获取当前日期、时间和日期时间。</li>
+</ul>
+</li>
+<li><strong>信号</strong>：<ul>
+<li><code>dateChanged(const QDate &amp;date)</code>：当日期发生变化时发射。</li>
+<li><code>timeChanged(const QTime &amp;time)</code>：当时间发生变化时发射。</li>
+<li><code>dateTimeChanged(const QDateTime &amp;dateTime)</code>：当日期时间发生变化时发射。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：适用于需要用户输入日期、时间或日期时间的场景，如日历、任务管理器等。</li>
+</ul>
+<p>这些Input Widgets控件为Qt应用程序提供了丰富的用户输入方式，开发者可以根据具体需求选择合适的控件来构建用户界面。</p>
+<h2 id="display-widget"><a href="#display-widget" class="headerlink" title="display widget"></a>display widget</h2><p>在Qt框架中，Display Widgets（显示控件）是用于展示和呈现数据给用户查看的界面元素。这些控件不直接接收用户输入，而是将程序内部的数据以图形化的方式展示出来。以下是对Qt中常见Display Widgets控件的详细讲解：</p>
+<h3 id="1-QLabel（标签）"><a href="#1-QLabel（标签）" class="headerlink" title="1. QLabel（标签）"></a>1. QLabel（标签）</h3><ul>
+<li><p><strong>功能</strong>：用于显示文本、图片或动画。QLabel是Qt中最基本也是最常用的显示控件之一。</p>
+</li>
+<li><p>常用方法</p>
+<p>：</p>
+<ul>
+<li><code>setText(const QString &amp;text)</code>：设置显示的文本内容。</li>
+<li><code>setPixmap(const QPixmap &amp;pixmap)</code>：设置显示的图片。</li>
+<li><code>setAlignment(Qt::Alignment flag)</code>：设置文本或图片的对齐方式。</li>
+</ul>
+</li>
+<li><p><strong>信号</strong>：QLabel本身不直接提供用于内容变化的信号，但可以通过与其他控件的交互来间接触发信号。</p>
+</li>
+<li><p><strong>使用场景</strong>：适用于需要显示静态文本、图片或简单动画的场景，如标题栏、提示信息等。</p>
+</li>
+</ul>
+<h3 id="2-QTextBrowser（文本浏览器）"><a href="#2-QTextBrowser（文本浏览器）" class="headerlink" title="2. QTextBrowser（文本浏览器）"></a>2. QTextBrowser（文本浏览器）</h3><ul>
+<li><p><strong>功能</strong>：用于显示和编辑富文本内容，支持HTML格式。</p>
+</li>
+<li><p>常用方法</p>
+<p>：</p>
+<ul>
+<li><code>setText(const QString &amp;text)</code>：设置显示的文本内容。</li>
+<li><code>setHtml(const QString &amp;html)</code>：设置显示的HTML内容。</li>
+<li><code>anchorClicked(const QUrl &amp;url)</code>：当用户点击HTML中的链接时发射的信号。</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：适用于需要显示复杂文本格式（如带有超链接、图片、格式化的文本等）的场景，如帮助文档、新闻阅读器等。</p>
+</li>
+</ul>
+<h3 id="3-QGraphicsView（图形视图）"><a href="#3-QGraphicsView（图形视图）" class="headerlink" title="3. QGraphicsView（图形视图）"></a>3. QGraphicsView（图形视图）</h3><ul>
+<li><p><strong>功能</strong>：用于显示和管理QGraphicsScene（场景）中的图形项（如线条、形状、图像等）。</p>
+</li>
+<li><p><strong>特点</strong>：QGraphicsView和QGraphicsScene一起构成了Qt中强大的二维图形框架，支持复杂的图形交互和渲染。</p>
+</li>
+<li><p>常用方法</p>
+<p>：</p>
+<ul>
+<li><code>setScene(QGraphicsScene *scene)</code>：设置要显示的场景。</li>
+<li><code>scene()</code>：获取当前显示的场景。</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：适用于需要展示复杂图形界面、进行图形交互（如拖拽、缩放、旋转等）的场景，如绘图软件、游戏界面等。</p>
+</li>
+</ul>
+<h3 id="4-QCalendarWidget（日历控件）"><a href="#4-QCalendarWidget（日历控件）" class="headerlink" title="4. QCalendarWidget（日历控件）"></a>4. QCalendarWidget（日历控件）</h3><ul>
+<li><p><strong>功能</strong>：提供一个日历视图，允许用户选择日期。</p>
+</li>
+<li><p>常用方法</p>
+<p>：</p>
+<ul>
+<li><code>setSelectedDate(const QDate &amp;date)</code>：设置选中的日期。</li>
+<li><code>selectedDate()</code>：获取当前选中的日期。</li>
+</ul>
+</li>
+<li><p>信号</p>
+<p>：</p>
+<ul>
+<li><code>selectionChanged()</code>：当选中日期发生变化时发射。</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：适用于需要用户选择日期的场景，如日程安排、事件提醒等。</p>
+</li>
+</ul>
+<h3 id="5-QProgressBar（进度条）"><a href="#5-QProgressBar（进度条）" class="headerlink" title="5. QProgressBar（进度条）"></a>5. QProgressBar（进度条）</h3><ul>
+<li><p><strong>功能</strong>：用于显示任务的进度。</p>
+</li>
+<li><p>常用方法</p>
+<p>：</p>
+<ul>
+<li><code>setValue(int value)</code>：设置进度条的值。</li>
+<li><code>value()</code>：获取进度条当前的值。</li>
+</ul>
+</li>
+<li><p>信号</p>
+<p>：</p>
+<ul>
+<li><code>valueChanged(int value)</code>：当进度条的值发生变化时发射。</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：适用于需要展示任务进度的场景，如下载进度、加载进度等。</p>
+</li>
+</ul>
+<h3 id="6-QLCDNumber（液晶数字显示）"><a href="#6-QLCDNumber（液晶数字显示）" class="headerlink" title="6. QLCDNumber（液晶数字显示）"></a>6. QLCDNumber（液晶数字显示）</h3><ul>
+<li><p><strong>功能</strong>：模仿液晶显示屏的数字显示方式，用于显示数字。</p>
+</li>
+<li><p>常用方法</p>
+<p>：</p>
+<ul>
+<li><code>display(const QString &amp;text)</code>：设置显示的文本（数字）。</li>
+<li><code>setNum(int num)</code>：直接设置要显示的整数。</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：适用于需要以特殊方式（如液晶显示风格）展示数字的场景，如计时器、温度计等模拟界面。</p>
+</li>
+</ul>
+<h3 id="7-其他Display-Widgets"><a href="#7-其他Display-Widgets" class="headerlink" title="7. 其他Display Widgets"></a>7. 其他Display Widgets</h3><p>Qt还提供了其他一些Display Widgets控件，如QHorizontalLine（水平线）、QVerticalLine（垂直线）、QOpenGLWidget（OpenGL图形渲染控件）、QQuickWidget（QML嵌入控件）等。这些控件各有特色，适用于不同的显示需求。例如，水平线和垂直线用于分隔界面元素；QOpenGLWidget用于集成OpenGL渲染管线到Qt应用程序中；QQuickWidget允许将基于QML的用户界面组件集成到传统的Qt Widgets应用中。</p>
+<p>综上所述，Qt中的Display Widgets控件为开发者提供了丰富的界面展示手段，可以根据具体需求选择合适的控件来构建用户友好的界面。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>https://fiy-pc.github.io/2024/10/27/Qt控件/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>FIY-pc</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年10月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/27/Winsock2/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/27/pygame/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
