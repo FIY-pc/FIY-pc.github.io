@@ -19,22 +19,22 @@
   <meta name="author" content="FIY-pc">
   <meta name="keywords" content="博客">
   
-    <meta name="description" content="Winsock2服务端必要头文件与库12#include &lt;winsock2.h&gt;	&#x2F;&#x2F;包含windows.h#pragma comment(lib , &quot;Ws2_32&quot;) &#x2F;&#x2F;导库  12...target_include_libraries($&#123;ProjectId&#125; Ws2_32)    初始化Winsock2库123456789101112">
+    <meta name="description" content="RESTFul API基本知识定义RESTFul API是一种API的设计风格，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Winsock2">
-<meta property="og:url" content="https://fiy-pc.github.io/2024/10/29/Winsock2/index.html">
+<meta property="og:title" content="RESTFul-API.md">
+<meta property="og:url" content="https://fiy-pc.github.io/2024/10/31/RESTFul-API-md/index.html">
 <meta property="og:site_name" content="FIY-pc Blog">
-<meta property="og:description" content="Winsock2服务端必要头文件与库12#include &lt;winsock2.h&gt;	&#x2F;&#x2F;包含windows.h#pragma comment(lib , &quot;Ws2_32&quot;) &#x2F;&#x2F;导库  12...target_include_libraries($&#123;ProjectId&#125; Ws2_32)    初始化Winsock2库123456789101112">
+<meta property="og:description" content="RESTFul API基本知识定义RESTFul API是一种API的设计风格，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-29T06:22:59.000Z">
-<meta property="article:modified_time" content="2024-10-29T13:45:58.315Z">
+<meta property="article:published_time" content="2024-10-31T11:14:06.000Z">
+<meta property="article:modified_time" content="2024-10-31T11:22:06.029Z">
 <meta property="article:author" content="FIY-pc">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Winsock2 - FIY-pc Blog</title>
+  <title>RESTFul-API.md - FIY-pc Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Winsock2"></span>
+            <span id="subtitle" data-typed-text="RESTFul-API.md"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-29 14:22" pubdate>
-          2024年10月29日 下午
+        <time datetime="2024-10-31 19:14" pubdate>
+          2024年10月31日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          555 字
+          15 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -271,35 +271,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Winsock2</h1>
+            <h1 id="seo-header">RESTFul-API.md</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Winsock2"><a href="#Winsock2" class="headerlink" title="Winsock2"></a>Winsock2</h1><h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><h3 id="必要头文件与库"><a href="#必要头文件与库" class="headerlink" title="必要头文件与库"></a>必要头文件与库</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;winsock2.h&gt;</span>	<span class="hljs-comment">//包含windows.h</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> comment(lib , <span class="hljs-string">&quot;Ws2_32&quot;</span>) <span class="hljs-comment">//导库</span></span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">...<br>target_include_libraries(<span class="hljs-variable">$&#123;ProjectId&#125;</span> Ws2_32)<br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="初始化Winsock2库"><a href="#初始化Winsock2库" class="headerlink" title="初始化Winsock2库"></a>初始化Winsock2库</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;winsock2.h&gt;</span>	</span><br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> comment(lib , <span class="hljs-string">&quot;Ws2_32&quot;</span>) </span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>    WSADATA wsadata = &#123;<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-comment">//MAKEWORD(2,2) 指定最佳和最高winsock版本</span><br>    <span class="hljs-keyword">if</span> (WSAStartup(MAKEWORD(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>),&amp;wsadata))&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;WSAStartup failed: %d\n&quot;</span>, iResult);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    ...<br>    WSACleanup();    <span class="hljs-comment">//释放Winsock资源</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="创建套接字"><a href="#创建套接字" class="headerlink" title="创建套接字"></a>创建套接字</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c">SOCKET socketListen = socket(AF_INET,SOCK_STREAM,<span class="hljs-number">0</span>);<br><span class="hljs-comment">//AF_INET :IPv4地址格式 (AF_INET6 IPv6地址格式)</span><br><span class="hljs-comment">//SOCK_STREAM :流式套接字(面向连接，无差错，无重复)</span><br><span class="hljs-comment">//0 :自动指定与套接字类型匹配的协议</span><br><br><span class="hljs-keyword">if</span>(socketListen == INVALID_SOCKET)&#123;<br>    MessageBox(<span class="hljs-literal">NULL</span>,TEXT(<span class="hljs-string">&quot;套接字创建失败!&quot;</span>),TEXT(<span class="hljs-string">&quot;socket error&quot;</span>),MB_OK);<br>    WSACleanup();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br><br>...<br>closesocket(socketListen); <span class="hljs-comment">//关闭套接字资源</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="将套接字与IP地址、端口号捆绑"><a href="#将套接字与IP地址、端口号捆绑" class="headerlink" title="将套接字与IP地址、端口号捆绑"></a>将套接字与IP地址、端口号捆绑</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in</span> <span class="hljs-title">sockAddr</span>;</span><br>sockAddr.sin_family = AF_INET;<br>sockAddr.sin_port = htons(POST);<br>sockAddr.sin_addr.S_un.S_addr = INADDR_ANY;<br><span class="hljs-comment">//INADDR_ANY :自动在本机所有IP地址上监听(每次连接都不知道它会用哪个地址，建议不用)</span><br><span class="hljs-comment">//inet_addr(&quot;127.0.0.1&quot;) 将IP从字符串转换成IPv4格式，127.0.0.1为本机地址</span><br><br><br><span class="hljs-keyword">if</span>(bind(socketListen, (SOCKADDR *) &amp;sockAddr, <span class="hljs-keyword">sizeof</span> (sockAddr)) == SOCKET_ERROR)&#123;<br>    MessageBoxA(<span class="hljs-literal">NULL</span>,TEXT(<span class="hljs-string">&quot;套接字捆绑IP,端口失败&quot;</span>),TEXT(<span class="hljs-string">&quot;bind error&quot;</span>),MB_OK); <span class="hljs-comment">//MessageBoxA是个弹窗</span><br>    closesocket(socketListen)<br>    WSACleanup();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;;<br><br><span class="hljs-comment">//可以使用getsockname(SOCKET s,sockaddr *name,int namelen)获取分配给套接字的地址</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="监听端口"><a href="#监听端口" class="headerlink" title="监听端口"></a>监听端口</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//SOMAXCONN 将连接队列的最大长度设置为最大合理值</span><br><span class="hljs-keyword">if</span>(listen(socketListen,SOMAXCONN) == SOCKET_ERROR)&#123;<br>    MessageBoxA(<span class="hljs-literal">NULL</span>,TEXT(<span class="hljs-string">&quot;监听端口失败!&quot;</span>),TEXT(<span class="hljs-string">&quot;Listen error&quot;</span>),MB_OK);<br>    closesocket(socketListen);<br>    WSACleanup();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="接收连接请求，返回套接字句柄"><a href="#接收连接请求，返回套接字句柄" class="headerlink" title="接收连接请求，返回套接字句柄"></a>接收连接请求，返回套接字句柄</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in</span> <span class="hljs-title">sockAddrClient</span>;</span><br><span class="hljs-type">int</span> nAddrlen = <span class="hljs-keyword">sizeof</span> (sockAddrClient);<br><span class="hljs-keyword">while</span> (TRUE)&#123;<br>    SOCKET socketAccept = accept(socketListen,(SOCKADDR*)&amp;sockAddrClient,&amp;nAddrlen);<br>    <span class="hljs-keyword">if</span>(socketAccept == INVALID_SOCKET)&#123;<br>        <span class="hljs-keyword">continue</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="收发数据"><a href="#收发数据" class="headerlink" title="收发数据"></a>收发数据</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//发数据用send()</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">send</span> <span class="hljs-params">(</span><br><span class="hljs-params">    SOCKET s,	<span class="hljs-comment">//已连接的套接字句柄 _In_	(如果是服务器是socketAccept，客户端是socketClient)</span></span><br><span class="hljs-params">    <span class="hljs-type">const</span> <span class="hljs-type">char</span> *buf,	<span class="hljs-comment">//要发送数据的缓冲区指针	_In_</span></span><br><span class="hljs-params">	<span class="hljs-type">int</span> len,		<span class="hljs-comment">//以字节为单位的缓冲区长度	_In_</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span> flags		<span class="hljs-comment">//标志位，设置0就行	_In_</span></span><br><span class="hljs-params">)</span><br><span class="hljs-comment">//收数据用recv()</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">recv</span> <span class="hljs-params">(</span><br><span class="hljs-params">	SOCKET s,	<span class="hljs-comment">// _In_</span></span><br><span class="hljs-params">    <span class="hljs-type">char</span> *buf,	<span class="hljs-comment">//要接受数据的缓冲区指针	_Out_</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span> len,</span><br><span class="hljs-params">    <span class="hljs-type">int</span> flag</span><br><span class="hljs-params">)</span>    <br></code></pre></td></tr></table></figure>
-
-<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//初始化Winsock2</span><br><span class="hljs-comment">//创建套接字</span><br><span class="hljs-comment">//建立连接 </span><br><span class="hljs-type">int</span> <span class="hljs-title function_">connect</span><span class="hljs-params">(</span><br><span class="hljs-params">	SOCKET s,	<span class="hljs-comment">//与服务器通信的套接字句柄(客户端就是socketClient)</span></span><br><span class="hljs-params">    <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> sockaddr *name,	<span class="hljs-comment">//包含服务器IP和端口号的sockaddr_in结构</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span> namelen <span class="hljs-comment">//sockaddr_in结构的长度</span></span><br><span class="hljs-params">)</span><br><br></code></pre></td></tr></table></figure>
-
+                <h1 id="RESTFul-API"><a href="#RESTFul-API" class="headerlink" title="RESTFul API"></a>RESTFul API</h1><h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>RESTFul API是一种API的设计风格，</p>
 
                 
               </div>
@@ -324,8 +301,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Winsock2</div>
-      <div>https://fiy-pc.github.io/2024/10/29/Winsock2/</div>
+      <div>RESTFul-API.md</div>
+      <div>https://fiy-pc.github.io/2024/10/31/RESTFul-API-md/</div>
     </div>
     <div class="license-meta">
       
@@ -337,7 +314,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月29日</div>
+          <div>2024年10月31日</div>
         </div>
       
       
@@ -369,18 +346,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/29/Qt%E6%8E%A7%E4%BB%B6/" title="Qt控件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Qt控件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/29/pygame/" title="pygame">
-                        <span class="hidden-mobile">pygame</span>
+                      <a href="/2024/10/31/%E5%AE%9E%E9%AA%8C%E4%BA%8C%E8%A7%A3%E7%AD%94-md/" title="实验二解答.md">
+                        <span class="hidden-mobile">实验二解答.md</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
