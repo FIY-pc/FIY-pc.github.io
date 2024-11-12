@@ -42,13 +42,19 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2024/11/06/redis/"/>
-    <url>/2024/11/06/redis/</url>
+    <title>Redis</title>
+    <link href="/2024/11/07/redis/"/>
+    <url>/2024/11/07/redis/</url>
     
     <content type="html"><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>学习笔记，Redis</tag>
+      
+    </tags>
     
   </entry>
   
